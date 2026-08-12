@@ -1,0 +1,10 @@
+{
+  "name": "quiz-management-system-root",
+  "version": "1.0.0",
+  "description": "Quiz Management & Online Assessment System",
+  "scripts": {
+    "seed": "npm --prefix backend run seed",
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:frontend": "npm --prefix frontend run dev"
+  }
+}

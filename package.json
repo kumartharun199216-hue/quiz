@@ -1,0 +1,10 @@
+{
+  "name": "quiz-root",
+  "version": "1.0.0",
+  "description": "Root wrapper for Quiz Management System",
+  "scripts": {
+    "seed": "cd quiz-management-system/backend && npm run seed",
+    "dev:backend": "cd quiz-management-system/backend && npm run dev",
+    "dev:frontend": "cd quiz-management-system/frontend && npm run dev"
+  }
+}
