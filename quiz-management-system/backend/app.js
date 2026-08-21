@@ -15,11 +15,24 @@ const dashboardRoutes = require('./routes/dashboardRoutes');
 
 const app = express();
 
+// Trust proxy (required for rate limiting behind Render/proxies)
+app.set('trust proxy', 1);
+
 // Security Middlewares
 app.use(helmet());
+const allowedOrigins = [
+  process.env.CLIENT_URL,
+  'https://kumartharun199216-hue.github.io',
+].filter(Boolean);
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || 'http://localhost:5173',
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
     credentials: true,
   })
 );
