@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - 'quiz-management-system/frontend/**'
+      - '.github/workflows/deploy-frontend.yml'
   workflow_dispatch:
 
 permissions:
@@ -38,6 +39,8 @@ jobs:
       - name: Build
         working-directory: quiz-management-system/frontend
         run: npm run build
+        env:
+          VITE_API_URL: https://quiz-backend-api-fyd6.onrender.com/api
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
