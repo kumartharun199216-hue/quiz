@@ -40,7 +40,7 @@ jobs:
         working-directory: quiz-management-system/frontend
         run: npm run build
         env:
-          VITE_API_URL: https://quiz-backend-api-fyd6.onrender.com/api
+          VITE_API_URL: https://quiz-backend-api-qo6t.onrender.com/api
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
