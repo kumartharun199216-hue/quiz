@@ -23,6 +23,8 @@ app.use(helmet());
 const allowedOrigins = [
   process.env.CLIENT_URL,
   'https://kumartharun199216-hue.github.io',
+  'https://skillassess.bstk.in',
+  'http://skillassess.bstk.in',
 ].filter(Boolean);
 app.use(
   cors({
